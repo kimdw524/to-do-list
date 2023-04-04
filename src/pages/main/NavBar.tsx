@@ -1,14 +1,18 @@
-import { CiSquarePlus } from 'react-icons/ci';
+import { ReactNode } from 'react';
 import styled from 'styled-components';
 
-const NavBar = () => {
+interface INavBar {
+    children: ReactNode
+}
+
+const NavBar = ({children}: INavBar) => {
     return (
         <NavBarBackground>
             <Start>
                 <Logo>To Do List</Logo>
             </Start>
             <End>
-                <Item><CiSquarePlus size="48" /></Item>
+                {children}
             </End>
         </NavBarBackground>
     )
@@ -36,7 +40,7 @@ const End = styled.div`
     justify-content: flex-end;
 `
 
-const Item = styled.div`
+export const Item = styled.div`
     line-height: 0;
     user-select: none;
     svg {

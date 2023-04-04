@@ -1,11 +1,11 @@
 import { ReactNode } from 'react';
 import styled from 'styled-components';
 
-interface BackgroundProps {
+interface IBackground {
     children: ReactNode;
 }
 
-const Background = ({ children }: BackgroundProps) => {
+const Background = ({ children }: IBackground) => {
     return (
         <NavBarBackground>
             {children}

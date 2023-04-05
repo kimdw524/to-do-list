@@ -1,9 +1,9 @@
-import { CiSquarePlus } from 'react-icons/ci';
+import { AiFillPlusSquare } from 'react-icons/ai';
 import styled from 'styled-components';
-import NavBar, {Item} from "./NavBar";
 import List from './List';
 import type { IListInfo } from './List';
 import { useState } from 'react';
+import SideBar, { Item } from '../../components/SideBar';
 
 const Main = () => {
     const [list, setList] = useState<IListInfo[]>([]);
@@ -19,9 +19,11 @@ const Main = () => {
 
     return (
         <>
-            <NavBar>
-                <Item><CiSquarePlus onClick={newList} size={48} /></Item>
-            </NavBar>
+            <SideBar>
+                <Item>
+                    <AiFillPlusSquare size={48} />
+                </Item>
+            </SideBar>
             <ListContainer>
                 {
                     list.map(i => {
